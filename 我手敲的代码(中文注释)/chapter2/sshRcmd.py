@@ -4,11 +4,11 @@ import threading
 import paramiko
 import subprocess
 
-def ssh_command(ip, user, passwd, command):
+def ssh_command(ip, user, passwd, command, port = 22):
     client = paramiko.SSHClient()
     # client.load_host_keys('/home/root/.ssh/known_hosts') #支持用密钥认证代替密码验证,实际环境推荐使用密钥认证
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())    #设置自动添加和保存目标ssh服务器的ssh密钥
-    client.connect(ip, username=user, password=passwd)  #连接
+    client.connect(ip, port, username=user, password=passwd)  #连接
     ssh_session = client.get_transport().open_session() #打开会话
     if ssh_session.active:
         ssh_session.exec_command(command)   #执行命令
@@ -18,9 +18,9 @@ def ssh_command(ip, user, passwd, command):
             try:
                 cmd_output = subprocess.check_output(command, shell=True)
                 ssh_session.send(str(cmd_output))
-            except:
+            except Exception, e:
                 ssh_session.send(str(e))
         client.close()
     return
 
-ssh_command('192.168.88.105', 'pi', 'raspberry', 'ClientConnected')
+ssh_command('10.10.10.145', 'root', 'lovepython', 'ClientConnected', 2222)
