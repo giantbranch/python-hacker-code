@@ -21,7 +21,7 @@ sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
 
 # 在Windows平台上,我们需要设置IOCTL以启用混杂模式
 if os.name == "nt":
-    sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_NO)
+    sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)
 
 # 读取单个数据包
 print sniffer.recvfrom(65565)
