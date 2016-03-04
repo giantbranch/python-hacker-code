@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="user" method="upgrade">
+	<name>plg_user_joomla</name>
+	<author>Joomla! Project</author>
+	<creationDate>December 2006</creationDate>
+	<copyright>(C) 2005 - 2015 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>3.0.0</version>
+	<description>PLG_USER_JOOMLA_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="joomla">joomla.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_user_joomla.ini</language>
+		<language tag="en-GB">en-GB.plg_user_joomla.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="autoregister"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					description="PLG_USER_JOOMLA_FIELD_AUTOREGISTER_DESC"
+					label="PLG_USER_JOOMLA_FIELD_AUTOREGISTER_LABEL"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="mail_to_user"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="PLG_USER_JOOMLA_FIELD_MAILTOUSER_LABEL"
+					description="PLG_USER_JOOMLA_FIELD_MAILTOUSER_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="forceLogout"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="PLG_USER_JOOMLA_FIELD_FORCELOGOUT_LABEL"
+					description="PLG_USER_JOOMLA_FIELD_FORCELOGOUT_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="sources"
+		label="COM_JOOMLAUPDATE_CONFIG_SOURCES_LABEL"
+		description="COM_JOOMLAUPDATE_CONFIG_SOURCES_DESC"
+		>
+
+		<field
+			name="updatesource"
+			type="list"
+			default="default"
+			label="COM_JOOMLAUPDATE_CONFIG_UPDATESOURCE_LABEL"
+			description="COM_JOOMLAUPDATE_CONFIG_UPDATESOURCE_DESC"
+			>
+			<!-- Note: Changed the values lts to default and sts to next with 3.4.0 -->
+			<!--       Eliminated the 'nochange' option with 3.4.0 -->
+			<!--       All invalid/unsupported/obsolete options equated to default in code with 3.4.0 -->
+			<option value="default">COM_JOOMLAUPDATE_CONFIG_UPDATESOURCE_DEFAULT</option>
+			<option value="next">COM_JOOMLAUPDATE_CONFIG_UPDATESOURCE_NEXT</option>
+			<option value="testing">COM_JOOMLAUPDATE_CONFIG_UPDATESOURCE_TESTING</option>
+			<option value="custom">COM_JOOMLAUPDATE_CONFIG_UPDATESOURCE_CUSTOM</option>
+		</field>
+
+		<field
+			name="customurl"
+			type="text"
+			default=""
+			length="50"
+			label="COM_JOOMLAUPDATE_CONFIG_CUSTOMURL_LABEL"
+			description="COM_JOOMLAUPDATE_CONFIG_CUSTOMURL_DESC"
+			/>
+	</fieldset>
+
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+		>
+
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			filter="rules"
+			validate="rules"
+			component="com_joomlaupdate"
+			section="component" />
+	</fieldset>
+</config>
