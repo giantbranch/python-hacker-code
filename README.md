@@ -5,3 +5,9 @@
   
   我的新**blog**: http://www.giantbranch.cn
 
+ **自愿打赏**
+
+![自愿打赏][1]
+
+
+  [1]: http://pic.giantbranch.cn/pic/1551450728861.jpg
